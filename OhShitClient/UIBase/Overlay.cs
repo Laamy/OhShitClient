@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using System.Drawing;
 
 using static User32;
@@ -7,8 +6,6 @@ using static Debug;
 
 class Overlay : Form
 {
-    public delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
-
     public Overlay()
     {
         Log("Initializing UI..");
