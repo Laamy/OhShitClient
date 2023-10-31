@@ -14,14 +14,14 @@ class Overlay : Form
 
     public Overlay()
     {
-        Log("Initailizing UI..");
+        Log("Initializing  UI..");
 
         InitializeComponents();
 
-        Log("Initailizing Paint Hooks..");
+        Log("Initializing  Paint Hooks..");
         Paint += OnUpdate;
 
-        Log("Initailizing Delegate..");
+        Log("Initializing  Delegate..");
 
         Focus(); // bring the overlay window into focus
 
@@ -31,7 +31,7 @@ class Overlay : Form
 
         overDel = new WinEventDelegate(OnAdjust);
 
-        Log("Initailizing WinHooks..");
+        Log("Initializing  WinHooks..");
 
         SetWinEventHook((uint)SWEH_Events.EVENT_OBJECT_LOCATIONCHANGE, (uint)SWEH_Events.EVENT_OBJECT_LOCATIONCHANGE, IntPtr.Zero, overDel, GameId, GetWindowThreadProcessId(WinHandle, IntPtr.Zero), (uint)SWEH_dwFlags.WINEVENT_OUTOFCONTEXT | (uint)SWEH_dwFlags.WINEVENT_SKIPOWNPROCESS | (uint)SWEH_dwFlags.WINEVENT_SKIPOWNTHREAD);
         SetWinEventHook((uint)SWEH_Events.EVENT_SYSTEM_FOREGROUND, (uint)SWEH_Events.EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, overDel, 0, 0, (uint)SWEH_dwFlags.WINEVENT_OUTOFCONTEXT | (uint)SWEH_dwFlags.WINEVENT_SKIPOWNPROCESS | (uint)SWEH_dwFlags.WINEVENT_SKIPOWNTHREAD);
